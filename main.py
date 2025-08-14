@@ -11,8 +11,11 @@ app.add_middleware(
 
 @app.get("/health")
 def health():
+    print("health")
     return {"ok": True}
 
 @app.get("/echo")
 def echo(q: str = "hello"):
+    print(f"echo: {q}")
     return {"echo": q}
+
